@@ -1,0 +1,15 @@
+version: '2.29.1'
+services:
+  postgres:
+    image: postgres:15.2
+    restart: always
+    env_file:
+      - ./.env
+    volumes:
+      - ./db_data:/var/lib/postgresql/data
+    ports:
+      - '5435:5432'
+    environment:
+      POSTGRES_PASSWORD: "1234" 
+      POSTGRES_USER: "soyul"
+      POSTGRES_DB: "prismaGraphql"
